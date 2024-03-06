@@ -1,118 +1,89 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import styles from '@/styles/Home.module.css'
+import Link from 'next/link'
+import Spline from '@splinetool/react-spline';
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <main className={styles.main}>
+        <div className={styles.navBar}>
+          <Image className={styles.logo} src={"/havenLandingLogo.svg"} width={150} height={100} alt='logo' />
+          <div className={styles.links}>
+            <Link href={"/"} className={styles.home}>home</Link>
+            <Link href={"/"} className={styles.adoption}>adoption</Link>
+            <Link href={"/"} className={styles.resources}>resources</Link>
+          </div>
+          <button className={styles.signUp}>sign up</button>
+
         </div>
-      </div>
+        <div className={styles.hero}>
+          <div className={styles.heroText}>
+            <h1 className={styles.h1}>Find Haven in Every Paw</h1>
+            <h2 className={styles.h2}>Every Heart Deserves a Home.</h2>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+            <button className={styles.cta} >Adopt Today →</button>
+          </div>
+          <div className={styles.animation}>
+            <Spline scene="https://prod.spline.design/cCKBEUORKNL0-2qQ/scene.splinecode" />
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          </div>
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <div className={styles.content}>
+          <div className={styles.afterFold}>
+            <h1 className={styles.getStarted}>Get Started</h1>
+            <div className={styles.boxes}>
+              <div className={styles.box1}>
+                <div className={styles.cat}>
+                  <Spline scene="https://prod.spline.design/u4-wTDyQBNcGBT1Y/scene.splinecode" />
+                </div>
+                <h4 className={styles.charity}>Humane Society</h4>
+                <p className={styles.amount}>$5</p>
+                <button className={styles.button1}>Donate</button>
+              </div>
+              <div className={styles.box2}>
+                <div className={styles.cat2}>
+                  <Spline scene="https://prod.spline.design/RnAFXOehZx9UfUnr/scene.splinecode" />
+                </div>
+                <h4 className={styles.charity}>Paws Society</h4>
+                <p className={styles.amount}>$5</p>
+                <button className={styles.button1}>Donate</button>
+              </div>
+              <div className={styles.box3}>
+                <div className={styles.cat3}>
+                  <Spline scene="https://prod.spline.design/Jz0aE4LJ5Pf7FW1d/scene.splinecode" />
+                </div>
+                <h4 className={styles.charity}>VOKRA</h4>
+                <p className={styles.amount} >$5</p>
+                <button className={styles.button1}>Donate</button>
+              </div>
+            </div>
+          </div>
+          <div className={styles.subBanner}>
+            <div className={styles.heart}>
+              <Spline scene="https://prod.spline.design/RFpyX-WBHEk3rTB2/scene.splinecode" />
+            </div>
+            <p className={styles.desc}>Here at Haven, we provide the basic necessities that every animal deserves, such as food, water, and shelter.
+              <br></br>
+              We are a dedicated non–profit organization helping animals that are seeking for a safe, new family.</p>
+            <button className={styles.adoptButton}>Volunteer With Us</button>
+          </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <div className={styles.newsletter}>
+            <h2 className={styles.newsTitle}>Get Notified</h2>
+            <h3 className={styles.newsCTA}>Sign up for the Haven newsletter and get notified of new animals, giveaways and special events.</h3>
+            <div className={styles.signUpCTA}>
+              <input className={styles.input} type='text' placeholder='email'></input>
+              <button className={styles.submit} type='submit'>Sign Up</button>
+            </div>
+          </div>
+          <div className={styles.footer}>
+            <p>© Jenny McMahon</p>
+            <Link className={styles.gitLink} href={"https://github.com/mpedrano/Haven.git "}>Haven</Link>
+          </div>
+        </div>
+      </main>
+    </>
   )
 }
